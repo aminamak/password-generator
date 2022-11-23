@@ -1,25 +1,37 @@
-import logo from './logo.svg';
-import './App.css';
+import Stack from "@mui/material/Stack";
+import { Banner } from "./components/Banner";
+import Container from "@mui/material/Container";
+import Typography from "@mui/material/Typography";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+import Box from "@mui/material/Box";
 
-export default App;
+import { PasswordGeneratorForm } from "./components/PasswordGeneratorForm";
+
+export const App = () => {
+	// const isLoggedIn = false;
+
+	// const getStyles = () => {
+	// 	return { backgroundColor: isLoggedIn ? "green" : "red" };
+	// };
+
+	return (
+		<Stack
+			direction="column"
+			justifyContent="space-evenly"
+			alignItems="stretch"
+			spacing={8}
+			sx={{
+				backgroundColor: "#A5FFD6",
+				height: "100vh",
+			}}
+		>
+			<Box>
+				<Banner title="Password Generator" subTitle="Protect your password" />
+			</Box>
+
+			<Box>
+				<PasswordGeneratorForm title="Please complete password criteria" />
+			</Box>
+		</Stack>
+	);
+};
